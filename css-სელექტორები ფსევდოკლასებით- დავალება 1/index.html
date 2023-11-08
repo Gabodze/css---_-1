@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!--CSS–ში სელექტორები არიან შაბლონები, რომლებიც გამოიყენება იმ ელემენტის სელექციისთვის (გამოსარჩევად), რომლის გასტილვაც გვინდა.
+    მაგალითად: Class-ის და id–ის შემთხვევაში იმ ელემენტებს გავსტილავთ რომლებსაც ეს კლასი ეკუთვნის, ან კონკრეტული აიდის მიხედვით 
+    განვახორციელებთ მასზე წვდომას. იმ შემთხვევაში თუ მაგალითად გავსტილავთ P ელემენტს, გაისტილება HTML დოკუმენტში არსებული ყველა პარაგრაფი.
+    იმისათვის, რომ სპეციალური კონკრეტული მდგომარეობის მიხედვით მოვახდინოთ ელემენტზე ზემოქმედება ვიყენებთ ფსევდოკლასებს.-->
+
+    <!--ფსევდო–კლასი გამოიყენება ელემენტის სპეციალური მდგომარეობის განსასაზღვრად. მაგალითად ფსევდო–კლასე შეგვიძლია გამოვიყენოთ ელემენტზე 
+    ჰოვერ ეფექტის გასაკეთებლად. ჩვენ შეგვიძია ელემენტზე ფოკუსის შემთხვევაში მოვახდინოთ ლინკზე სტილის შეცვლა.
+    ფსევდო–კლასი სინტაქსის შემდეგ იწერება – selector:pseudo-class{}-->
+
+    <!--ფსევდო კლასები შეიძლება კომბინირებულად იქნას გამოყენებული HTML  კლასებთან. ამ შემთხვევაში გაისტილება ყველა 
+    ის ელემენტი, რომელზეც გამოყენებული მექნება class="withClass"-->
+    <style>
+      .withClass {
+        color: blueviolet;
+      }
+    </style>
+    <h2><u>Class</u></h2>
+    <p class="withClass">lorem Ipsum</p>
+    <h1 class="withClass">lorem Ipsum</h1>
+
+    <hr />
+
+    <!--class1.class2 ან შემთხვევაში შეგვიძლია ავიღოთ ორი განსხვავებული კლასე და ორივეს ერთნაირი სტილი მივანიჭოთ.-->
+    <style>
+      .p1,
+      .p2 {
+        color: rgb(96, 28, 77);
+      }
+    </style>
+    <h2><u> class.class</u></h2>
+    <p class="p1">
+      lorem Ipsumdolor sit, amet consectetur adipisicing elit. Accusamus cumque
+      corporis distinctio alias iure quia ipsum labore ab quisquam quae
+      voluptate cupiditate quibusdam <dolor sit, amet consectetur adipisicing
+      elit. Accusamus cumque corporis distinctio alias iure quia ipsum labore ab
+      quisquam quae voluptate cupiditate quibusdam /p>
+    </p>
+    <p class="p2">
+      lorem Ipsumdolor sit, amet consectetur adipisicing elit. Accusamus cumque
+      corporis distinctio alias iure quia ipsum labore ab quisquam quae
+      voluptate cupiditate quibusdam
+    </p>
+
+    <hr />
+
+    <!--id–ის შემთხვევაში განსტილავთ უნიკალურად ერთ კონკრეტულ ელემენტს-->
+    <style>
+      #paragraph {
+        color: green;
+      }
+    </style>
+        <h2><u> id</u></h2>
+
+    <p id="paragraph">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus cumque
+      corporis distinctio alias iure quia ipsum labore ab quisquam quae
+      voluptate cupiditate quibusdam laboriosam in voluptates, id, cum
+      voluptatum dolore!
+    </p>
+
+    <hr />
+
+    <!-- *-ის შემთხვევაში მასში დაწერილი სტილი გავრცელდება ყველა ელემენტზე -->
+    <style>
+      .fifqi * {
+        background-color: purple;
+        width: 200px;
+        height: 40px;
+        color: azure;
+        text-align: center;
+      }
+    </style>
+        <h2><u> *</u></h2>
+
+    <div class="fifqi">
+      <p>lorem</p>
+    </div>
+
+    <!-- თუკი p  ელემენტს მოვნიშნავთ, მაშინ დოკუმენტში მოხდება ყველა P ელემენტის სელექცია და მათი გასტილვა-->
+    <!-- <style>
+        p {
+          background-color: yellow;
+        } 
+        </style>-->
+        <h2><u>Element</u></h2>
+
+    <p id="firstname">My name is Donald.</p>
+    <p id="hometown">I live in Duckburg.</p>
+    <hr />
+
+    <!-- element.class ამ შემთხვევაში გაისტილება ის კონკრეტული ელემენტები, რომლებსაც ერთნაირი კლასი ექნება მინიჭებული-->
+    <style>
+      .red {
+        color: red;
+      }
+    </style>
+        <h2><u> Element.class</u></h2>
+
+    <h3 class="red">lorem</h3>
+    <i class="red"> ipsum</i>
+    <hr />
+
+    <!--element,element  ამ შემთხვევაში ელემენტში არსებული ყველა მაგალითად P ელემენტი ერთნაირად გაისტილება -->
+    <style>
+      section p {
+        background-color: rgb(102, 150, 6);
+      }
+    </style>
+     <h2><u> Element,element</u></h2>
+    <section>
+      <p>lorem</p>
+      <p>loem</p>
+    </section>
+
+    <hr />
+
+    <!--element>element ამ შემთხვევაში ერთ ელემენტში არსებულ შვილობილ ელემენტებზე გავრცელდება ეს სტილი-->
+    <style>
+      .element > p {
+       color: rgb(107, 107, 7);
+      }
+    </style>
+     <h2><u> Element>class</u></h2>
+    <div class="element">
+      <h2>My name is Donald</h2>
+      <p>I live in Duckburg.</p>
+    </div>
+
+    <hr />
+
+    <!--element+element ამ დროს სელექცია ხდება იმ პირველი ელემენტის, რომელიც დივის შემდეგ პირველი მოდის-->
+    <style>
+      section + h1 {
+        background-color: blue;
+      }
+    </style>
+         <h2><u> Element+class</u></h2>
+
+    <section></section>
+    <h1>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio cumque odio
+      ab qui, quibusdam necessitatibus nesciunt tempore, consectetur, quasi iure
+      fugiat fugit quae quod dolore. Repellat voluptatibus natus nostrum maxime.
+    </h1>
+    <hr />
+
+    <!--:active აქტიურ ლინკს გამოხატავს-->
+    <style>
+      a:active {
+        background-color: yellow;
+      }
+    </style>
+         <h2><u> active</u></h2>
+
+    <a href="https://www.w3schools.com">W3schools.com</a>
+    <hr />
+
+    <!--::after გვეხმარება ელემენტის შემდეგ რაიმეს ჩასმაში, დამატებაში-->
+    <!-- <style>
+        p::after { 
+          content: " - მარიამ გაბოძე";
+        }
+    </style> -->
+    <h2><u>after</u></h2>
+
+    <p>My name is</p>
+    <hr />
+
+    <!-- ::before ელემენტის წინ გვამატებინებს რაიმეს-->
+    <!-- <style>
+        p::before {
+          content: "Read this -";
+        }
+    </style> -->
+    <h2><u> before</u></h2>
+
+    <p>I live in Ducksburg</p>
+    <hr />
+
+    <!--:checked გამოარჩევს ყველა შემოწმებულ ინფუთს-->
+    <style>
+      input:checked {
+        height: 10px;
+        width: 10px;
+      }
+    </style>
+         <h2><u>checked</u></h2>
+
+    <input type="radio" checked="checked" value="male" name="gender" />
+    Male<br />
+    <input type="radio" value="female" name="gender" /> Female
+    <hr />
+
+    <!--:default აჩვენებს ყველა default ანუ საწყის მდგომარეობაში მოცემულ ინფუთს-->
+    <style>
+      .default:default {
+        box-shadow: 0 0 1px 1px red;
+      }
+    </style>
+         <h2><u> default</u></h2>
+
+    <form action="">
+      <input class="default" type="radio" name="gender" value="male" checked />
+      Male<br />
+      <input type="radio" name="gender" value="female" /> Female<br />
+    </form>
+
+    <hr />
+    <br />
+
+    <!--:disabled აჩვენებს მიუწვდომელ ინფუთებს-->
+    <style>
+      input[type="text"]:disabled {
+        background: #dddddd;
+      }
+    </style>
+         <h2><u> disabled</u></h2>
+
+    <input type="text" disabled="disabled" value="disabled" />
+    <hr />
+    <br />
+
+    <!--:empty აჩვენებს ისეთ ელემენტებს, რომლებსაც არ ჰყავთ შვილობილი ელემენტები-->
+    <style>
+      p:empty {
+        width: 100px;
+        height: 20px;
+        background: #ff0000;
+      }
+    </style>
+         <h2><u> empty</u></h2>
+
+    <p></p>
+    <hr />
+    <br />
+
+    <!--:enabled ყველა ხელმისაწვდომი ინფუთის სელექციას ახდენს-->
+    <style>
+      input[type="text"]:enabled {
+        background: #ffff00;
+      }
+    </style>
+         <h2><u> enabled</u></h2>
+
+    <input type="text" value="enabled" /><br /><br />
+    <hr />
+    <br />
+
+    <!--::first-child ისეთ ელემენტს გამოარჩევს, რომელიც მისი მშობელი ელემენტისთვის არის პირველი შვილი-->
+    <style>
+      .first > p:first-child {
+        background-color: rgb(123, 123, 106);
+      }
+    </style>
+         <h2><u> first-child</u></h2>
+
+
+    <div class="first">
+      <p>This paragraph .</p>
+      <p>This paragraph is not the first child of its parent (div).</p>
+    </div>
+    <hr />
+    <br />
+
+    <!--::first-letter ელემენტის პირველ ასოს გამოარჩევს -->
+    <style>
+      h4::first-letter {
+        font-size: 200%;
+        color: #8a2be2;
+      }
+    </style>
+       <h2><u> first-letter</u></h2>
+    <h4>I'm Mariam Gabodze</h4>
+    <hr />
+    <br />
+
+    <!--::first-line  ყველა მითითებული ელემენტის პირველ ხაზს გამოსახავს -->
+    <style>
+      .first-line::first-line {
+        background-color: rgb(188, 47, 91);
+      }
+    </style>
+       <h2><u> first-line</u></h2>
+    <h1 class="first-line">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia aperiam
+      eum veritatis quisquam cupiditate assumenda nemo vitae tempora rerum
+      accusamus, incidunt numquam minima blanditiis cum, maiores possimus!
+      Adipisci, atque nostrum!
+    </h1>
+    <hr />
+
+    <!--first-of-type ამ შემთხვევაში იმ ელემენტს მიუთითებს, რომელიც თავისი მშობლისთვის პირველი შვილია.  -->
+    <style>
+      article > p:first-of-type {
+        background: red;
+      }
+    </style>
+       <h2><u> first-of-type</u></h2>
+    <article class="ftype">
+      <p>The first paragraph.</p>
+      <p>The second paragraph.</p>
+    </article>
+    <hr />
+    <br />
+
+    <!--:focus ისეთ ინფუთს გამოსახავს, რომელზეც ფოკუსი არის გაკეთებული-->
+    <style>
+      .inpfoc:focus {
+        background-color: yellow;
+      }
+    </style>
+       <h2><u> focus</u></h2>
+    <input class="inpfoc" type="text" name="firstname">
+    <hr>
+    <br>
+
+    <!--:fullscreen აჩვენებს იმ ელემენტს, რომელიც იმყოფება მთლიან ეკრანზე გაშლის მდგომარეობაში-->
+    <style>
+        :fullscreen {
+          background-color: yellow;
+        }
+        button {
+          padding: 20px;
+          font-size: 20px;
+          border: none;
+          border-radius: 8px;
+        }
+        </style>
+           <h2><u>fullscreen</u></h2>
+        <button onclick="openFullscreen();">Open Fullscreen</button>
+        <button onclick="closeFullscreen();">Close Fullscreen</button>
+       <hr>
+
+    <!--:hover მაუსის მიტანისას გამოარჩევს ლინკს-->
+    <style>
+        a:hover {
+          background-color: rgb(34, 0, 255);
+        }
+        </style>
+           <h2><u>Hover</u></h2>
+        <a href="https://www.w3schools.com">w3schools.com</a>
+<hr>
+
+
+    <!--:in-range  განსაზღვრულ დიაპაზონში ირჩევს ელემენტს თავისი მნიშვნელობით-->
+    <style>
+        input:in-range {
+          border: 2px solid rgb(0, 0, 0);
+        }
+    </style>
+       <h2><u>in-range</u></h2>
+    <input type="number" min="5" max="10" value="7">
+    <hr>
+
+    <!--:indeterminate არჩევს ელემენტებს, რომლებიც განუსაზღვრელ მდგომარეობაშია და მას აქვს - ნიშანი, ჩეკბოქსის ნიშნის ნაცვლად-->
+    
+    <!--:invalid ისეთ ლინკებზე მიუთითებს, რომლებსაც აქვთ არასწორი მნიშვნელობა (გააწითლებს)-->
+    <style>
+        input:invalid {
+          border: 2px solid red;
+        }
+        </style>
+           <h2><u>invalid</u></h2>
+        <input type="email" value="supportEmail">
+        <hr>
+    <!--:lang(it) ისეთ ელემენტებს გამოსახავს რომლის ენაც შესაბამისია "it"–ის-->
+
+    <!--:last-child ისეთ ელემენტს იპოვის, რომელიც მისი მშობლისთვის ბოლო შვილია-->
+    <!-- <style> 
+        p:last-child {
+          background: #ff0000;
+        }
+        </style> -->
+        <h2><u> last-child</u></h2>
+        <p>first</p>
+        <p>Second</p>
+        <p>Third</p>
+        <hr>
+    
+
+    <!--:last-of-type ისეთ ელემენტს იპოვის, რომელიც მისი მშობლისთვის ბოლო ელემენტია-->
+   
+    <!--:link ყველა უმოქმედო,unvisited ლინკს იპოვის-->
+    <style>
+        .a:link {
+          background-color: yellow;
+        }
+        </style>
+        <h2><u>link</u></h2>
+        <a class="a" href="http://www.wikipedia.org">Wikipedia</a>
+<hr>
+   
+    <!--::marker სიის ელემენტების სანიშნების გასტილვას ანხორციელებს -->
+    <style>
+        ::marker { 
+          color: red;
+        }
+        </style>
+    <h2><u>marker</u></h2>
+
+        <ul>
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+          </ul>
+          <hr>
+    
+    
+    <!--:not(p) ისეთ ელემენტებს ამოარჩევსმ, რომელიც აარ არის პარაგრაფი-->
+    <!-- <style>
+        p {
+          color: #000000;
+        }
+        
+        :not(p) {
+          color: yellow;
+        }
+        </style> -->
+        <h2><u>not(p)</u></h2>
+
+        <h1>This is a heading</h1>
+
+        <p>This is a paragraph.</p>
+        <hr>
+
+    <!--:nth-child მშობლისთვის მეორე შვილის გასტილვას ანხორციელებს-->
+    <!-- <style> 
+        /* Selects the second element of div siblings */
+        div:nth-child(2) {
+          background: red;
+        }
+        
+        /* Selects the second li element in a list */
+        li:nth-child(2) {
+          background: lightgreen;
+        }
+        
+        /* Selects every third element among any group of siblings */
+        :nth-child(3) {
+          background: yellow;
+        }
+        </style> -->
+        <h2><u>nth-child</u></h2>
+
+        <ul>
+            <li>First list item</li>
+            <li>Second list item</li>
+            <li>Third list item</li>
+            <li>Fourth list item</li>
+            <li>Fifth list item</li>
+          </ul>
+          <hr>
+   
+    <!--:nth-last-of-type(n) მშობლისთვის მეორე ელემენტის გასტილვას ანხორციელებს-->
+    
+    <!--:only-of-type ისეთი ელემენტების გასტილას ანსორციელებს, როდესაც ეს ელემენტი ერთადერთი ელემენტია თავისი მშობლლის-->
+    <style> 
+        .only-of-type>p:only-of-type {
+          background: rgb(0, 255, 221);
+        }
+        </style>
+        <h2><u>only-of-type</u></h2>
+        <div class="only-of-type">
+            <p>This is a paragraph.</p>
+        </div>
+        <div>
+            <p>This is a paragraph.</p>
+            <p>This is a paragraph.</p>
+        </div>
+        <hr>
+<hr>
+<!--:only-child ყველა იმ ელემენტს სტილავს, რომელიც მისი მშობლისთვის ერთადერთი შვილია-->
+    <style> 
+        .only >p:only-child {
+          background: red;
+        }
+        </style>
+        <h2><u>only-child</u></h2>
+        <div class="only"><p>This is a paragraph.</p></div>
+        <hr>
+
+    <!--:OPTIONAL ისეთ ინფუთს გამოსახავს, რომელიც არ არის სავალდებულო-->
+    <style>
+        input:optional {
+          background-color: yellow;
+        }
+        </style>
+        <h2><u>optional</u></h2>
+        <input type="text">
+        <hr>
+        
+    <!--:out-of-range ისეთ ელემენტეს გვაჩვენებს, რომლეიც არ ჯდებიან განსაზღვრულ დიაპაზონში-->
+    <style>
+        input:out-of-range {
+          border: 2px solid red;
+        }
+        </style>
+        <h2><u>out-of-range</u></h2>
+<input type="number" min="5" max="10" value="17">
+<hr>
+
+    <!--::placeholder გამოარჩევს იმ ინფუთებს, რომლებსაც spaceholder აქვთ გაწერილი-->
+    <style>
+        ::-ms-input-placeholder { /* Edge 12-18 */
+          color: red;
+        }
+        
+        ::placeholder {
+          color: red;
+        }
+        </style>
+        <h2><u>placeholder</u></h2>
+        <input type="text" name="fname" placeholder="First name">
+        <hr>
+
+
+
+    <!--::read-only ისეთ ინფუთს გვაჩვენებს, რომელიც მხოლოდ წასაკითხადაა და არ შეგვიძლია მისის შეცვლა-->
+    <h2><u>read-only</u></h2>
+    <input readonly value="hello" class="input1" />
+    <br /><br />
+
+    <!--:read-write ისეთი ინფუთია, სადაც შეგვიძლია ტექსტზე მანიპულაცია-->
+    <h2><u>read-write</u></h2>
+    <input value="hello" class="input2" />
+    <br /><br />
+
+    <!--:required არის სავალდებულო შესაყვანი ველი-->
+    
+    <style>
+      input:required {
+        background-color: yellow;
+      }
+    </style>
+    <h2><u>required</u></h2>
+   <input required />
+   <hr>
+
+
+    <!--:root სელექტორი არის დოკუმენტის ძირეული HTMLელემენტი-->
+    <style>
+      :root {
+        background: #eabfbf;
+      }
+    </style>
+    <h2><u>root</u></h2>
+    <br />
+<hr>
+
+    <!--::selection მონიშნულ ტექსტს გვაჩვემებს-->
+    <style>
+      ::selection {
+        color: red;
+        background: yellow;
+      }
+    </style>
+    <h2><u>selection</u></h2>
+    <div>This is some text in a div element.</div>
+    <hr />
+
+    <!--:target ელემენტი შეგვიძლია გამოვიყენოთ მიზნობრივად რომელიმე კონკრეტულ ელემმენტზე-->
+    <style>
+      :target {
+        border: 2px solid #d4d4d4;
+        background-color: #e5eecc;
+      }
+    </style>
+    <h2><u>target</u></h2>
+    <p><a href="#news1">Jump to New content 1</a></p>
+    <p><a href="#news2">Jump to New content 2</a></p>
+
+    <p id="news1"><b>New content 1...</b></p>
+    <p id="news2"><b>New content 2...</b></p>
+    <hr />
+    <br />
+
+    <!--:valid გამოიყენება მოქმედი, ვალიდური ინფუთის გამოსახატად. ვალიდური სელექტორი მუშაობს 
+    მხოლოდ ფორმის ელემენტებზე ისიც ლიმიტირებულად. როგორიცაა მაგალითად ელემენტზე მინიმალური და მაქსიმალური
+    ატრიბუტები, იმეილის ველი ლეგალური იმეილით, ან რიცხვების შესაყვანი ველი, რომელსაც აქვს რიცხვითი მნიშვნელობები-->
+    <style>
+      input:valid {
+        background-color: yellow;
+      }
+    </style>
+    <h2><u>valid</u></h2>
+    <input type="email" value="support@example.com" />
+    <hr />
+
+
+    <!--:visited გამოსახავს ისეთ ლინკს, რომელზეც მომხმარებელი გადავიდა.-->
+    <style>
+      a:visited {
+        color: rgb(174, 8, 36);
+      }
+    </style>
+    <h2><u>visited</u></h2>
+    <a href="https://www.w3schools.com">W3Schools Home</a>
+  </body>
+</html>
